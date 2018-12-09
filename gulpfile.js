@@ -32,4 +32,4 @@ gulp.task('lint', function() {
 });
 
 // Default Task
-gulp.task('default', ['develop', 'lint']);
+gulp.task('default', gulp.parallel('develop','lint'));
