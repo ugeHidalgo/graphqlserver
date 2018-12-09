@@ -7,11 +7,12 @@ var _ = require('lodash'),
     jshint = require('gulp-jshint');;
 
 // Develop task with nodemon to relaunch when changes in files.
-gulp.task('develop', function(){
+gulp.task('develop', function(done){
     nodemon({
       script: './server.js',
       env: { 'NODE_ENV': 'development' },
-      ignore: ['public/dist/']
+      ignore: ['public/dist/'],
+      done: done
     })
 });
 
